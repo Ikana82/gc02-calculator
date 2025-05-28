@@ -10,14 +10,14 @@
     <div class="calculator">
         <input type="text" id="display" readonly />
         <div class="buttons">
-            <button class="button">+</button>
-            <button class="button">-</button>
-            <button class="button">=</button>
-            <button class="button ac">AC</button>
-            <button class="button">1</button>
-            <button class="button">2</button>
-            <button class="button">3</button>
-            <button class="button">4</button>
+            <button onclick="appendValue('+')" class="button">+</button>
+            <button onclick="appendValue('-')" class="button">-</button>
+            <button onclick="calculate()" class="button">=</button>
+            <button onclick="clearDisplay()" class="button ac">AC</button>
+            <button onclick="appendValue('1')" class="button">1</button>
+            <button onclick="appendValue('2')" class="button">2</button>
+            <button onclick="appendValue('3')" class="button">3</button>
+            <button onclick="appendValue('4')" class="button">4</button>
         </div>    
     </div>    
     <script src="script.js"></script>
