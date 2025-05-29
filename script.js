@@ -1,5 +1,15 @@
 function appendValue(val) {
-    document.getElementById("display").value += val;
+    let displayValue = document.getElementById("display").value
+
+    if (displayValue === "Error!") {
+        document.getElementById("display").value =""
+    }
+    if (displayValue === "0") {
+        document.getElementById("display").value = val // reassignment
+    } else {
+        document.getElementById("display").value += val;
+    }
+    
 }
 
 function clearDisplay() {
@@ -8,6 +18,10 @@ function clearDisplay() {
 
 function calculate() {
     let displayValue = document.getElementById("display").value
-    let result = eval(displayValue)
-    document.getElementById("display").value = result
+    try {
+        let result = eval(displayValue)
+        document.getElementById("display").value = result
+    } catch (error) {
+        document.getElementById("display").value = "Error!"
+    }
 }
