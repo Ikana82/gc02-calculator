@@ -1,5 +1,5 @@
 function appendValue(val) {
-    let displayValue = document.getElementById("display").value
+    let displayValue = document.getElementById("display").value // string
 
     if (displayValue === "Error!") {
         document.getElementById("display").value =""
@@ -7,13 +7,13 @@ function appendValue(val) {
     if (displayValue === "0") {
         document.getElementById("display").value = val // reassignment
     } else {
-        document.getElementById("display").value += val;
+        document.getElementById("display").value += val; // concatination
     }
     
 }
 
 function clearDisplay() {
-    document.getElementById("display").value = ""
+    document.getElementById("display").value = "0"
 }
 
 function calculate() {
@@ -25,3 +25,9 @@ function calculate() {
         document.getElementById("display").value = "Error!"
     }
 }
+
+// Sama saja dengan onclick="appendValue"
+const addButton = document.getElementById("add-button")
+addButton.addEventListener("click", function () {
+    appendValue("+")
+})
