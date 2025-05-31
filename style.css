@@ -5,57 +5,89 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #3c4264;
 }
 
 .calculator {
-    width: 200px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    width: 300px;
+    background-color: #262a45;
+    border-radius: 15px;
+    padding: 30px;
+    border: 6px groove #515d7e;
 }
 
 #display {
     width: 100%;
-    height: 50px;
-    background: #eaeaea;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    height: 70px;
+    background: #eae4db;
+    border: 3px groove #515d7e;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    font-family: 'digital-7';
+    color: #f2f3f5;
     text-align: right;
-    font-size: 1.5rem;
     padding: 10px;
     box-sizing: border-box;
 }
 
-.buttons {
+.buttons { 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 15px;
+    font-style: normal;
+
 }
 
 .button {
-    height: 50px;
-    background: #007bff;
-    color: #fff;
+    height: 40px;
+    background: #eae4db;
+    color: #474a5d;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    font-family: 'Spartan', sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px #939398;
+    font-weight: bold;
+}
+
+.ac {
+    height: 40px;
+    background: #656c9a;
+    color: #eae4db;
+    border: none;
+    border-radius: 3px;
     font-size: 1.2rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    box-shadow: 0 4px #535a88;
+    
+} 
+
+.equal {
+    height: 40px;
+    background: #d14e30;
+    color: #eae4db;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px #8a3329;
+    grid-column: span 2;
+    
+} 
 
 .button:active {
-    background: #0056b3;
+    box-shadow: 0 2px #939398;
+    transform: translateY(4px);
 }
 
-.button.ac {
-    background: #dc3545;
-}
-
-.button.ac:active {
-    background: #a71d2a;
-}
