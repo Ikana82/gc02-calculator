@@ -59,7 +59,7 @@ body {
     transform: translateY(4px);
 }
 
-.buttom {
+.equal {
     height: 40px;
     background: #d1f1fd;
     color: #60381d;
@@ -77,6 +77,6 @@ body {
 
 .buttom:active {
     box-shadow: 0 2px #de78a0;
-    transform: translateY(4px);
+    transform: translate(4px);
 }
 

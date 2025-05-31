@@ -17,20 +17,18 @@ function clearDisplay() {
 }
 
 function calculate() {
-    let displayValue = document.getElementById("display").value
+    let displayValue = document.getElementById("display").value;
+    
+    // Mengganti simbol % menjadi / 100 
+    let modifiedValue = displayValue.replace(/%/g, "/100");
+
     try {
-        let result = eval(displayValue)
-        document.getElementById("display").value = result
+        let result = eval(modifiedValue)
+        document.getElementById("display").value = result;
     } catch (error) {
-        document.getElementById("display").value = "Error!"
+        document.getElementById("display").value = "Error!";
     }
 }
-
-// Sama saja dengan onclick="appendValue"
-const addButton = document.getElementById("add-button")
-addButton.addEventListener("click", function () {
-    appendValue("+")
-})
 
 function del() {
     let display = document.getElementById("display");
@@ -44,3 +42,9 @@ function del() {
         display.value = displayValue.slice(0, -1);
     }
 }
+
+// Sama saja dengan onclick="appendValue"
+const addButton = document.getElementById("add-button")
+addButton.addEventListener("click", function () {
+    appendValue("+")
+})
