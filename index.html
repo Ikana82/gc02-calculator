@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator Ika</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" readonly />
+        <input type="text" id="display" placeholder="" readonly />
+        <div class="space"></div>
         <div class="buttons">
-            <button onclick="appendValue('+')" class="button">+</button>
-            <button onclick="appendValue('-')" class="button">-</button>
-            <button onclick="appendValue('*')" class="button">x</button>
-            <button onclick="appendValue('/')" class="button">/</button>
-            <button onclick="appendValue('9')" class="button">9</button>
-            <button onclick="appendValue('8')" class="button">8</button>
-            <button onclick="appendValue('7')" class="button">7</button>
-            <button onclick="appendValue('6')" class="button">6</button>
-            <button onclick="appendValue('5')" class="button">5</button>
-            <button onclick="appendValue('4')" class="button">4</button>
-            <button onclick="appendValue('3')" class="button">3</button>
-            <button onclick="appendValue('2')" class="button">2</button>
-            <button onclick="appendValue('1')" class="button">1</button>
-            <button onclick="appendValue('0')" class="button">0</button>
-            <button onclick="calculate()" class="button">=</button>
-            <button onclick="clearDisplay()" class="button ac">AC</button>
+            <button class="button ac">AC</button>
+            <button class="button ac">DEL</button>
+            <button class="button">%</button>
+            <button class="button">÷</button>
+            <button class="button">9</button>
+            <button class="button">8</button>
+            <button class="button">7</button>
+            <button class="button">x</button>
+            <button class="button">6</button>
+            <button class="button">5</button>
+            <button class="button">4</button>
+            <button class="button">-</button>
+            <button class="button">3</button>
+            <button class="button">2</button>
+            <button class="button">1</button>
+            <button class="button">+</button>
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button equal">=</button>
         </div>    
-    </div>    
-    <script src="script.js"></script>
+    </div>  
+    <script src="script.js"></script>  
 </body>
 </html>
