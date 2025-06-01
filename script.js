@@ -1,8 +1,14 @@
 function appendValue(val) {
     let displayValue = document.getElementById("display").value // string
 
+    let operators = ["+", "-", "*", "/"];
+    
     if (displayValue === "Error!") {
         document.getElementById("display").value =""
+    }
+
+    if (displayValue === "0" && operators.includes(val)) {
+        return;
     }
     if (displayValue === "0") {
         document.getElementById("display").value = val // reassignment
