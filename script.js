@@ -1,5 +1,5 @@
 // Membuat variabel global 
-    let lastResult = false;
+    let lastResult = false; // dibuat false supaya bisa langsung direset 
 
 function appendValue(val) {
     let displayValue = document.getElementById("display").value // string
@@ -10,6 +10,14 @@ function appendValue(val) {
     if (displayValue === "Error!") {
         document.getElementById("display").value =""
         displayValue = document.getElementById("display").value; // Update ulang setelah reset
+    }
+
+    // Jika operasi ditekan ganda maka hapus paling depan
+    let lastCharacter = displayValue.charAt(displayValue.length - 1); // deklarasikan dulu variabelnya
+
+    if (operators.includes(val) && operators.includes(lastCharacter)) {
+        document.getElementById("display").value = displayValue.slice(0, -1) + val;
+        return;
     }
 
     // Saat hasil baru ditampilkan dan user menekan angka berarti ganti display baru dengan kosong
