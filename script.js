@@ -1,13 +1,30 @@
+// Membuat variabel global 
+    let lastResult = false;
+
 function appendValue(val) {
     let displayValue = document.getElementById("display").value // string
 
     let operators = ["+", "-", "*", "/"];
     
+    // Jika di AC atau reset sebelumnya error
     if (displayValue === "Error!") {
         document.getElementById("display").value =""
+        displayValue = document.getElementById("display").value; // Update ulang setelah reset
     }
 
-    if (displayValue === "0" && operators.includes(val)) {
+    // Saat hasil baru ditampilkan dan user menekan angka berarti ganti display baru dengan kosong
+    if (lastResult) {
+        if (operators.includes(val)) {
+            document.getElementById("display").value = displayValue + val;
+        } else {
+            document.getElementById("display").value = val;
+        }
+        lastResult = false;
+        return;
+    }
+
+    // Jika bukan angka terlebih dahulu, operasi tidak boleh muncul
+    if ((displayValue === "" || displayValue === "0") && operators.includes(val)) {
         return;
     }
     if (displayValue === "0") {
@@ -31,6 +48,7 @@ function calculate() {
     try {
         let result = eval(modifiedValue)
         document.getElementById("display").value = result;
+        lastResult = true;
     } catch (error) {
         document.getElementById("display").value = "Error!";
     }
