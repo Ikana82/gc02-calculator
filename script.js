@@ -29,7 +29,26 @@ function appendValue(val) {
         }
         lastResult = false;
         return;
+    } 
+
+    // Pengaturan dan penangan tombol % 
+    if (val === "%" ) {
+        let lastNumberComma = displayValue.match(/(\d+(\.\d+)?)(?!.*\d)/);
+        if (lastNumberComma) {
+            let lastNumber = lastNumberComma[0];
+
+            // mengecek apakah angka terakhir sudah dalam bentuk desimal < 1
+            if (parseFloat(lastNumber) < 1 && displayValue.includes(lastNumber)) {
+                return;
+            }
+
+            let desimal = (parseFloat(lastNumber) / 100).toFixed(5);
+            let updatedValue = displayValue.slice(0, -lastNumber.length) + parseFloat(desimal);
+            document.getElementById("display").value = updatedValue;
+        }
+        return;
     }
+
 
     // Jika bukan angka terlebih dahulu, operasi tidak boleh muncul
     if ((displayValue === "" || displayValue === "0") && operators.includes(val)) {
